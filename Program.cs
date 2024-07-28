@@ -15,17 +15,17 @@ public class Program
         wifeGrandMother[0].Husband = wifeGrandFather[0];
         wifeGrandMother[1].Husband = wifeGrandFather[1];
         FamilyMebers wifeMother = new FamilyMebers() { FullName = "Ангелина", Age = 45, Mother = wifeGrandMother[0], Father = wifeGrandFather[0] };
-        FamilyMebers wifeFather = new FamilyMebers() { FullName = "Сергей", Age = 55, Mother = wifeGrandMother[1], Father = wifeGrandFather[1],Wife = wifeMother};
+        FamilyMebers wifeFather = new FamilyMebers() { FullName = "Сергей", Age = 55, Mother = wifeGrandMother[1], Father = wifeGrandFather[1], Wife = wifeMother };
         wifeMother.Husband = wifeFather;
         FamilyMebers wife = new FamilyMebers() { FullName = "Василиса", Age = 19, Mother = wifeMother, Father = wifeFather };
 
 
         FamilyMebers[] grandMother = { new FamilyMebers() { FullName = "Светлана", Age = 60 }, new FamilyMebers() { FullName = "Тасия", Age = 65 } };
-        FamilyMebers[] grandFather = { new FamilyMebers() { FullName = "Арут", Age = 50,Wife = grandMother[0] }, new FamilyMebers() { FullName = "Михаил", Age = 55, Wife = grandMother[1] } };
+        FamilyMebers[] grandFather = { new FamilyMebers() { FullName = "Арут", Age = 50, Wife = grandMother[0] }, new FamilyMebers() { FullName = "Михаил", Age = 55, Wife = grandMother[1] } };
         grandMother[0].Husband = grandFather[0];
         grandMother[1].Husband = grandFather[1];
         FamilyMebers mother = new FamilyMebers() { FullName = "Юлия", Age = 40, Mother = grandMother[0], Father = grandFather[0] };
-        FamilyMebers father = new FamilyMebers() { FullName = "Василий", Age = 45, Mother = grandMother[1], Father = grandFather[1],Wife = mother };
+        FamilyMebers father = new FamilyMebers() { FullName = "Василий", Age = 45, Mother = grandMother[1], Father = grandFather[1], Wife = mother };
         mother.Husband = father;
 
         FamilyMebers familyMebers = new FamilyMebers()
@@ -62,14 +62,6 @@ public class Program
         Console.WriteLine("Мама: " + person.Mother?.FullName);
         Console.WriteLine("Папа: " + person.Father?.FullName);
         Console.WriteLine("Вторая половинка: " + person.Wife?.FullName + person.Husband?.FullName);
-    }
-
-    static public void PrintFamilyNameOneLine(string printText, FamilyMebers person)
-    {
-        Console.Write(printText);
-        foreach (var item in person.Grandmother())
-            if (item != null)
-                Console.Write(item.FullName + " | ");
     }
 }
 

@@ -32,6 +32,6 @@ namespace HomeWork1
             return new FamilyMebers[] { Mother?.Father, Father?.Father };
         }
 
-  
+
     }
 }
